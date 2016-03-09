@@ -1,0 +1,6 @@
+$(document).ready(function() {
+	$(".del-button").bind('ajax:success', function() {  
+ 		$(this).closest(".comment").remove();
+		$('.comments-count').text('<%= @comments_count - 1 %>');
+	});
+}); 

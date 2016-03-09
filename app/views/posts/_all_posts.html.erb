@@ -1,0 +1,15 @@
+<div class="row masonry well" data-columns>
+	<% @posts.each do |post| %>
+		<div class="item">
+		    <div class="thumbnail">
+		        <%= image_tag post.picture.url(:medium), :class=>"img-responsive" %>
+		        <div class="caption">
+		            <%= render post %>
+		            <%= link_to "Подробнее", post, :class=>"btn btn-primary" %>
+		        </div>
+		    </div>
+		</div>
+	<% end %>
+</div>
+<%= javascript_include_tag "salvattore" %>
+

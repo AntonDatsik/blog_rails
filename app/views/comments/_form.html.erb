@@ -1,0 +1,11 @@
+<%= form_for @comment, :remote => true do |f| %>
+	<div class = "field">
+		<%= f.text_area :content %>
+	</div>
+	<div class = "field">
+		<%= f.hidden_field :post_id, :value => @post.id %>
+	</div>
+	<div class = "actions">
+		<%= f.submit "Add comment", class: "btn btn-primary"%>
+	</div>
+<% end %>

@@ -1,0 +1,15 @@
+<li>
+	<h4>
+		<span class="content">
+			<%= link_to post.title, post_path(post.id) %>
+		</span>
+	</h4>
+	<span class="content">
+		<%= abbreviated_post(post) %>
+	</span>
+	<br>
+	<span class="text-muted">
+		Posted <%= time_ago_in_words(post.created_at) %> ago.
+	</span>
+	<br>
+</li>

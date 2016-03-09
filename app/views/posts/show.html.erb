@@ -1,0 +1,26 @@
+<% provide(:title, @post.title) %>
+<div class="panel panel-default">
+	  <div class="panel-heading">
+      <h3><%= @post.title %></h3>
+    </div>
+	  <div class="panel-body">
+      <%= image_tag @post.picture.url, :class=>"img-thumbnail img-responsive center-block" %>
+      <%= @post.body %>
+      <br><br>
+      <span class="text-muted">
+        Posted <%= time_ago_in_words(@post.created_at) %> ago.
+      </span>
+    </div>
+</div>
+<br>
+<div class="comments">
+	  <hr>
+	  <h4> Comments(<span class="comments-count"><%= @comments.count %></span>) </h4>
+	  <br>
+    <div class="comments-render">
+	    <%= render @comments %>
+    </div>
+	  <%= render 'comments/form' %>
+	  <%= will_paginate @comments %>
+</div>
+

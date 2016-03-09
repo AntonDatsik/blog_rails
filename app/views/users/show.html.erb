@@ -1,0 +1,7 @@
+<% provide(:title, @user.name) %>
+  <% if @user.posts.any? %>
+    <h3><%= @user.name %> posts (<%= @user.posts.count %>)</h3>
+      <%= render 'posts/all_posts' %>
+  <% end %>
+</div>
+

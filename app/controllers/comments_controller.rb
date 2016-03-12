@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 		@comment = current_user.comments.create(comment_params)
 		@post = Post.find(comment_params[:post_id])
 		@user = current_user
+		@comments_count = @post.comments.count
 		respond_to do |format|
 			format.html { redirect_to @post }
 			format.js 	{ }

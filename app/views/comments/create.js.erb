@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	$("div.comments-render").append('<div class="container-fluid comment">\
 	  	<div class="row">\
 			<div class="col-md-4">\
@@ -21,9 +20,6 @@ $(document).ready(function() {
 	  	<% end %>\
   		<hr>\
   	</div>');
-  	var $comments_count = $('.comments-count');
-	var count = parseInt($comments_count.text());
-	++count;
-	$comments_count.text(count);
-	$('form').find('div.field').find('textarea').val('');
+ 	var $comments_count = $('.comments-count');
+	$comments_count.text(<%= @comments_count %>);
 });
